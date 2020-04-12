@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Button disabled={true}>hello</Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
+        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
           hello
         </Button>
         <Button btnType={ButtonType.Link} href={"www.qq.com"}>
