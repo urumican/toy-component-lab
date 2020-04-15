@@ -1,18 +1,21 @@
 import React from "react";
 import Button, { ButtonType, ButtonSize } from "./components/Botton/button";
+import Alert, { AlertType } from "./components/Alert/alert";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Button disabled={true}>hello</Button>
         <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
           hello
         </Button>
-        <Button btnType={ButtonType.Link} href={"www.qq.com"}>
-          a link
-        </Button>
-        <a href={"https://www.qq.com"}>one line</a>
+        <Alert
+          message={"I am an alert"}
+          type={AlertType.Success}
+          closable={true}
+        >
+          <div>I am an alert</div>
+        </Alert>
       </header>
     </div>
   );
