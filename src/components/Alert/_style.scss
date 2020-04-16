@@ -1,0 +1,13 @@
+.my-lab-alert {
+  background-color: lightblue;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  @include alert-size($alert-padding-y, $alert-padding-x, $alert-font-weight);
+  border-radius: $border-radius;
+  box-shadow: $btn-box-shadow;
+}

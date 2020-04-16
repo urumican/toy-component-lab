@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 
 export enum ButtonSize {
@@ -30,6 +30,7 @@ type AnchorButtonProps = BaseButtonProps &
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
 const Button: React.FC<ButtonProps> = (props) => {
+  console.log("Before button prop open", props)
   const {
     btnType,
     className,
@@ -40,6 +41,8 @@ const Button: React.FC<ButtonProps> = (props) => {
     ...restProps
   } = props;
 
+  const [count, setCount] = useState(0)
+
   // class = btn, btn-lg, btn-primary
   const classes = classNames("btn", className, {
     [`btn-${btnType}`]: btnType,
@@ -47,6 +50,11 @@ const Button: React.FC<ButtonProps> = (props) => {
     disabled: btnType === ButtonType.Link && disabled,
   });
 
+  useEffect(() => {
+    console.log('I am the effect in button')
+  })
+
+  console.log("Before button reder", count)
   if (btnType === ButtonType.Link && href) {
     return (
       <a href={href} {...restProps}>
@@ -55,9 +63,13 @@ const Button: React.FC<ButtonProps> = (props) => {
     );
   } else {
     return (
+      <div>
+        <button onClick={() => {
+          setCount(count+1)
+        }}> experiment </button>
       <button className={classes} disabled={disabled} {...restProps}>
         {children}
-      </button>
+      </button></div>
     );
   }
 };
