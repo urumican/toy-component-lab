@@ -30,7 +30,7 @@ type AnchorButtonProps = BaseButtonProps &
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
 const Button: React.FC<ButtonProps> = (props) => {
-  console.log("Before button prop open", props)
+//  console.log("Before button prop open", props)
   const {
     btnType,
     className,
@@ -51,10 +51,10 @@ const Button: React.FC<ButtonProps> = (props) => {
   });
 
   useEffect(() => {
-    console.log('I am the effect in button')
+   // console.log('I am the effect in button')
   })
 
-  console.log("Before button reder", count)
+ // console.log("Before button reder", count)
   if (btnType === ButtonType.Link && href) {
     return (
       <a href={href} {...restProps}>
